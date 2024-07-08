@@ -44,6 +44,8 @@ public partial class MainWindow
     {
         using (HttpClient client = new HttpClient())
         {
+            int filesDownloaded = 0;
+            
             for (int i = 1; i <= 4; i++)
             {
                 for (int j = 1; j <= 12; j++)
@@ -55,6 +57,9 @@ public partial class MainWindow
                         string fileName = $"{i:D2}-{j:D2}.jpg";
                         string filePath = Path.Combine(saveFolderPath, fileName);
                         await File.WriteAllBytesAsync(filePath, imageData);
+
+                        filesDownloaded++;
+                        DownloadProgressBar.Value = filesDownloaded;
                     }
                     catch (Exception ex)
                     {

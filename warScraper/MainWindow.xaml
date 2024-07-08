@@ -6,11 +6,12 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:warScraper"
         mc:Ignorable="d"
-        Title="warScraper" Height="200" Width="800">
+        Title="warScraper" Height="250" Width="800">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="800" Margin="10">
-                <ui:TitleBar/>
+                <ui:TitleBar Margin="0,0,0,20"/>
                 <ui:TextBox x:Name="BaseUrlTextBox" PlaceholderText="Base URL" Margin="0,0,0,10"/>
                 <ui:Button Content="Select Save Location" Click="SelectSaveLocation_Click" Margin="0,0,0,10"/>
-                <ui:Button Content="Download Images" Click="DownloadImages_Click"/>
+                <ui:Button Content="Download Images" Click="DownloadImages_Click" Margin="0,0,0,10"/>
+                <ProgressBar x:Name="DownloadProgressBar" Minimum="0" Maximum="48" Margin="0,0,0,10"/>
         </StackPanel>
 </ui:FluentWindow>
